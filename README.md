@@ -17,5 +17,7 @@ comments :-)
 ### Insertion Sort ###
 
 * [go][isort_go]
+* [coffeescript][cs_go]
 
 [isort_go]:/sort/isort/isort.go
+[cs_go]:/sort/isort/isort.go
