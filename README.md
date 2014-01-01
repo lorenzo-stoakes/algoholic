@@ -20,4 +20,4 @@ comments :-)
 * [coffeescript][cs_go]
 
 [isort_go]:/sort/isort/isort.go
-[cs_go]:/sort/isort/isort.go
+[cs_go]:/sort/isort/isort.coffee
