@@ -4,7 +4,7 @@ isort = require('./isort')
 # afterward.
 
 N = 1e4
-ns = [1e4..1]
+ns = [N..1]
 
 isort(ns)
 
