@@ -11,11 +11,11 @@ func correctlySortsReversedInts(t *testing.T, max int, doSort func([]int) []int)
 		ns[i] = max - i
 	}
 
-	ns = doSort(ns)
+	sorted := doSort(ns)
 
 	for i := 0; i < max; i++ {
-		if ns[i] != i+1 {
-			t.Fatalf("Index %d is not sorted = %d, expected %d.", i, ns[i], i+1)
+		if sorted[i] != i+1 {
+			t.Fatalf("Index %d is not sorted = %d, expected %d.", i, sorted[i], i+1)
 		}
 	}
 }
