@@ -19,3 +19,17 @@ func correctlySortsReversedInts(t *testing.T, max int, doSort func([]int) []int)
 		}
 	}
 }
+
+func slicesAreEqual(ns1, ns2 []int) bool {
+	if ns1 == nil || ns2 == nil || len(ns1) != len(ns2) {
+		return false
+	}
+
+	for i, n := range ns1 {
+		if ns2[i] != n {
+			return false
+		}
+	}
+
+	return true
+}
