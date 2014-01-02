@@ -32,13 +32,24 @@ func Merge(ns1, ns2 []int) []int {
 	//
 	// Loop Invariant: ret[:k] consists of ns1[:i] and ns2[:j] in sorted order.
 	for k := 0; k < length; k++ {
+		if j >= len(ns2) {
+			copy(ret[k:], ns1[i:])
+			break
+		}
+		if i >= len(ns1) {
+			copy(ret[k:], ns2[j:])
+			break
+		}
+
 		switch {
-		case j >= len(ns2) || ns1[i] <= ns2[j]:
+		case ns1[i] <= ns2[j]:
 			ret[k] = ns1[i]
 			i++
-		case i >= len(ns1) || ns2[j] <= ns1[i]:
+		case ns2[j] <= ns1[i]:
 			ret[k] = ns2[j]
 			j++
+		default:
+			panic("Impossible.")
 		}
 	}
 
