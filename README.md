@@ -27,5 +27,11 @@ directory:-
 * [go][isort_go]
 * [coffeescript][isort_cs]
 
+### Merge Sort ###
+
+* [go][msort_go]
+
 [isort_go]:/sort/isort/isort.go
 [isort_cs]:/sort/isort/isort.coffee
+
+[msort_go]:/sort/msort/msort.go
