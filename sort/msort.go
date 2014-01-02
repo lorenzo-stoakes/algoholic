@@ -45,11 +45,9 @@ func Merge(ns1, ns2 []int) []int {
 		case ns1[i] <= ns2[j]:
 			ret[k] = ns1[i]
 			i++
-		case ns2[j] <= ns1[i]:
+		default:
 			ret[k] = ns2[j]
 			j++
-		default:
-			panic("Impossible.")
 		}
 	}
 
