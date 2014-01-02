@@ -15,7 +15,7 @@ func correctlySortsReversedInts(t *testing.T, max int, doSort func([]int) []int)
 
 	for i := 0; i < max; i++ {
 		if sorted[i] != i+1 {
-			t.Fatalf("Index %d is not sorted = %d, expected %d.", i, sorted[i], i+1)
+			t.Fatalf("Unsorted at index %d: got %d, expected %d.", i, sorted[i], i+1)
 		}
 	}
 }
