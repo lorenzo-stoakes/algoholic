@@ -12,6 +12,14 @@ implementation of the algorithms as clear as possible so there is heavy commenti
 throughout. Production implementations of these algorithms should probably include fewer
 comments :-)
 
+## Instructions ##
+
+To run code testing the algorithm implementations, execute the following in the appropriate
+directory:-
+
+* Go - `go test`
+* Coffeescript - `coffee [algorithm name]_test.coffee`
+
 ## Sorting ##
 
 ### Insertion Sort ###
