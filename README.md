@@ -38,8 +38,15 @@ insertion sort beats alternatives :-)
 
 * [go][msort_go]
 
+## Searching ##
+
+### Binary Search ###
+
+* [go][bsearch_go]
 
 [isort_go]:/sort/isort.go
 [isort_cs]:/sort/isort.coffee
 
 [msort_go]:/sort/msort.go
+
+[bsearch_go]:/search/bsearch.go
