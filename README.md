@@ -20,6 +20,13 @@ directory:-
 * Go - `go test`
 * Coffeescript - `coffee [algorithm name]_test.coffee`
 
+To benchmark go code run `go test -bench .` in the appropriate directory.
+
+__Note__ in `sort/`, `go test -bench .` will take a long while to complete the insertion sort
+benchmark. Use `go test -benchtime 0.3s -bench .` or similar (varying the time to taste) to
+reduce this time. Interestingly reducing the time significantly can highlight cases where
+insertion sort beats alternatives :-)
+
 ## Sorting ##
 
 ### Insertion Sort ###
