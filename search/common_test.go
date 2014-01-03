@@ -35,11 +35,11 @@ func correctlyFailsToFindMissingItem(t *testing.T, doSearch searchFunc) {
 	for length := 0; length <= 100; length++ {
 		ns := generateRange(1, length)
 		if res := doSearch(ns, 0); res != -1 {
-			t.Fatalf("Search of slice of [1, %d] for 0 returned %d, not expected -1.",
+			t.Fatalf("Search of [1, %d] for 0 returned %d, not expected -1.",
 				length, res)
 		}
 		if res := doSearch(ns, length+1); res != -1 {
-			t.Fatalf("Search of slice of [1, %d] for %d returned %d, not expected -1.",
+			t.Fatalf("Search of [1, %d] for %d returned %d, not expected -1.",
 				length, length+1, res)
 		}
 	}
@@ -50,7 +50,7 @@ func correctlyFindsItem(t *testing.T, doSearch searchFunc) {
 		ns := generateRange(1, length)
 		for i := 1; i <= length; i++ {
 			if res := doSearch(ns, i); res != i-1 {
-				t.Fatalf("Search of slice of [1, %d] for %d returned %d, not expected %d.",
+				t.Fatalf("Search of [1, %d] for %d returned %d, not expected %d.",
 					length, i, res, i-1)
 			}
 		}
