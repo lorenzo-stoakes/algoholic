@@ -38,7 +38,8 @@ insertion sort beats alternatives :-)
 
 * [go][msort_go]
 
-[isort_go]:/sort/isort/isort.go
-[isort_cs]:/sort/isort/isort.coffee
 
-[msort_go]:/sort/msort/msort.go
+[isort_go]:/sort/isort.go
+[isort_cs]:/sort/isort.coffee
+
+[msort_go]:/sort/msort.go
