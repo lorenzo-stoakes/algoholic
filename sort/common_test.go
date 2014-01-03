@@ -2,7 +2,9 @@ package algoholic
 
 import "testing"
 
-func benchmarkSortingReversedInts(b *testing.B, doSort func([]int) []int) {
+type sortFunc func([]int) []int
+
+func benchmarkSortingReversedInts(b *testing.B, doSort sortFunc) {
 	ns := createReversedInts(b.N)
 	b.ResetTimer()
 	doSort(ns)
@@ -10,7 +12,7 @@ func benchmarkSortingReversedInts(b *testing.B, doSort func([]int) []int) {
 
 // A simple test which sorts a reversed set of integers and ensures they are correctly sorted
 // afterward.
-func correctlySortsReversedInts(t *testing.T, max int, doSort func([]int) []int) {
+func correctlySortsReversedInts(t *testing.T, max int, doSort sortFunc) {
 	ns := createReversedInts(max)
 
 	sorted := doSort(ns)

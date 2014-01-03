@@ -13,3 +13,7 @@ func TestBinarySearchRecursiveCantFindMissingItem(t *testing.T) {
 func TestBinarySearchRecursiveFindsItem(t *testing.T) {
 	correctlyFindsItem(t, BinarySearchRecursive)
 }
+
+func BenchmarkBinarySearchRecursive(b *testing.B) {
+	benchmarkSearch(b, BinarySearchRecursive)
+}

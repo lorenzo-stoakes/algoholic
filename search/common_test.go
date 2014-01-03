@@ -56,3 +56,11 @@ func correctlyFindsItem(t *testing.T, doSearch searchFunc) {
 		}
 	}
 }
+
+func benchmarkSearch(b *testing.B, doSearch searchFunc) {
+	ns := generateRange(1, b.N)
+	b.ResetTimer()
+	for i := 1; i <= b.N; i++ {
+		doSearch(ns, i)
+	}
+}
