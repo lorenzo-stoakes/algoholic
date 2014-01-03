@@ -19,6 +19,6 @@ func binarySearchImpl(ns []int, n, offset int) int {
 	}
 }
 
-func BinarySearch(ns []int, n int) int {
+func BinarySearchRecursive(ns []int, n int) int {
 	return binarySearchImpl(ns, n, 0)
 }

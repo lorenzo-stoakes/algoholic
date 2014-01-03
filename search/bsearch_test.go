@@ -2,14 +2,14 @@ package algoholic
 
 import "testing"
 
-func TestEmptyBinarySearch(t *testing.T) {
-	correctlySearchesEmptySlice(t, BinarySearch)
+func TestEmptyBinarySearchRecursive(t *testing.T) {
+	correctlySearchesEmptySlice(t, BinarySearchRecursive)
 }
 
-func TestBinarySearchCantFindMissingItem(t *testing.T) {
-	correctlyFailsToFindMissingItem(t, BinarySearch)
+func TestBinarySearchRecursiveCantFindMissingItem(t *testing.T) {
+	correctlyFailsToFindMissingItem(t, BinarySearchRecursive)
 }
 
-func TestBinarySearchFindsItem(t *testing.T) {
-	correctlyFindsItem(t, BinarySearch)
+func TestBinarySearchRecursiveFindsItem(t *testing.T) {
+	correctlyFindsItem(t, BinarySearchRecursive)
 }
