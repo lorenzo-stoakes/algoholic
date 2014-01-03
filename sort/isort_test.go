@@ -12,4 +12,7 @@ func isort2(ns []int) []int {
 func TestInsertionSortSortsReversedInts(t *testing.T) {
 	correctlySortsReversedInts(t, 1e4, isort2)
 }
+
+func BenchmarkInsertionSort(b *testing.B) {
+	benchmarkSortingReversedInts(b, isort2)
 }

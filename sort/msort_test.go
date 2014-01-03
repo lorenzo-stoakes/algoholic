@@ -34,3 +34,7 @@ func TestMergeMergesEmptySlicesCorrectly(t *testing.T) {
 		t.Error("Merge(ns, []int{}) does not return ns.")
 	}
 }
+
+func BenchmarkMergeSort(b *testing.B) {
+	benchmarkSortingReversedInts(b, MergeSort)
+}
