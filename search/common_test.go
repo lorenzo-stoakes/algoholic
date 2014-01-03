@@ -3,6 +3,8 @@ package algoholic
 import "testing"
 
 type searchFunc func([]int, int) int
+
+// Generate integers in range [from, to].
 func generateRange(from, to int) []int {
 	length := to - from + 1
 
