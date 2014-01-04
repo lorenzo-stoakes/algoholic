@@ -1,8 +1,15 @@
 package algoholic
 
-import "testing"
+import (
+	"math/rand"
+	"testing"
+)
 
 type searchFunc func([]int, int) int
+
+const BENCHMARK_LENGTH = 1e6
+
+var benchmarkRange = generateRange(1, BENCHMARK_LENGTH)
 
 // Generate integers in range [from, to].
 func generateRange(from, to int) []int {
@@ -58,9 +65,10 @@ func correctlyFindsItem(t *testing.T, doSearch searchFunc) {
 }
 
 func benchmarkSearch(b *testing.B, doSearch searchFunc) {
-	ns := generateRange(1, b.N)
+	val := int(rand.Int31n(BENCHMARK_LENGTH+1))
 	b.ResetTimer()
+
 	for i := 1; i <= b.N; i++ {
-		doSearch(ns, i)
+		doSearch(benchmarkRange, val)
 	}
 }

@@ -4,10 +4,20 @@ import "testing"
 
 type sortFunc func([]int) []int
 
+const BENCHMARK_LENGTH = 1e4
+
 func benchmarkSortingReversedInts(b *testing.B, doSort sortFunc) {
-	ns := createReversedInts(b.N)
+	slices := make([][]int, b.N)
+
+	for i := 0; i < b.N; i++ {
+		slices[i] = createReversedInts(BENCHMARK_LENGTH)
+	}
+
 	b.ResetTimer()
-	doSort(ns)
+
+	for i := 0; i < b.N; i++ {
+		doSort(slices[i])
+	}
 }
 
 // A simple test which sorts a reversed set of integers and ensures they are correctly sorted
