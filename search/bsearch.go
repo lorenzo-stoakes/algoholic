@@ -31,10 +31,6 @@ func BinarySearchIterative(ns []int, n int) int {
 	from, to := 0, len(ns)-1
 
 	for {
-		if from > to {
-			return -1
-		}
-
 		// Avoid overflow.
 		mid := to - (to-from)/2
 		val := ns[mid]
@@ -46,6 +42,10 @@ func BinarySearchIterative(ns []int, n int) int {
 			to = mid - 1
 		default:
 			from = mid + 1
+		}
+
+		if from > to {
+			return -1
 		}
 	}
 }
