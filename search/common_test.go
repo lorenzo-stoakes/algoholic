@@ -65,7 +65,7 @@ func correctlyFindsItem(t *testing.T, doSearch searchFunc) {
 }
 
 func benchmarkSearch(b *testing.B, doSearch searchFunc) {
-	val := int(rand.Int31n(BENCHMARK_LENGTH+1))
+	val := int(rand.Int31n(BENCHMARK_LENGTH + 1))
 	b.ResetTimer()
 
 	for i := 1; i <= b.N; i++ {
