@@ -44,9 +44,15 @@ insertion sort beats alternatives :-)
 
 * [go][bsearch_go]
 
+### Linear Search ###
+
+* [go][lsearch_go]
+
 [isort_go]:/sort/isort.go
 [isort_cs]:/sort/isort.coffee
 
 [msort_go]:/sort/msort.go
 
 [bsearch_go]:/search/bsearch.go
+
+[lsearch_go]:/search/lsearch.go
