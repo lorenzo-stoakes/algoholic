@@ -42,6 +42,7 @@ func BinarySearchIterative(ns []int, n int) int {
 		case n < val:
 			to = mid - 1
 		default:
+			// n > val
 			from = mid + 1
 		}
 
