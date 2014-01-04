@@ -37,7 +37,7 @@ func BinarySearchIterative(ns []int, n int) int {
 		val := ns[mid]
 
 		switch {
-		case val == n:
+		case n == val:
 			return mid
 		case n < val:
 			to = mid - 1
