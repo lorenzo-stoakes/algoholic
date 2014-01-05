@@ -1,8 +1,8 @@
 package algoholic
 
 func BinarySearchRecursive(ns []int, n int) int {
-	var binarySearchImpl func([]int, int, int) int
-	binarySearchImpl = func(ns []int, n, offset int) int {
+	var search func([]int, int, int) int
+	search = func(ns []int, n, offset int) int {
 		if len(ns) == 0 {
 			return -1
 		}
@@ -14,14 +14,14 @@ func BinarySearchRecursive(ns []int, n int) int {
 		case n == val:
 			return half + offset
 		case n < val:
-			return binarySearchImpl(ns[:half], n, offset)
+			return search(ns[:half], n, offset)
 		default:
 			// n > val
-			return binarySearchImpl(ns[half+1:], n, offset+half+1)
+			return search(ns[half+1:], n, offset+half+1)
 		}
 	}
 
-	return binarySearchImpl(ns, n, 0)
+	return search(ns, n, 0)
 }
 
 func BinarySearchIterative(ns []int, n int) int {
