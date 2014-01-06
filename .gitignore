@@ -1,2 +1,4 @@
 # Temporary files.
 .#*
+
+node_modules/
