@@ -18,7 +18,7 @@ To run code testing the algorithm implementations, execute the following in the 
 directory:-
 
 * Go - `go test`
-* Coffeescript - `coffee [algorithm name]_test.coffee`
+* Coffeescript - Ensure you've run `npm install` and have mocha installed via `npm install -g mocha`. Then run `./runCoffeeTests.sh` in the project root directory.
 
 To benchmark go code run `go test -bench .` in the appropriate directory.
 
