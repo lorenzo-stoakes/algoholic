@@ -19,6 +19,7 @@ directory:-
 
 * Go - `go test`
 * Coffeescript - Ensure you've run `npm install` and have mocha installed via `npm install -g mocha`. Then run `./runCoffeeTests.sh` in the project root directory.
+* C - Run `make test`. You can also run this in the project root directory to run all tests. If there is no output, the tests passed :)
 
 To benchmark go code run `go test -bench .` in the appropriate directory.
 
@@ -33,6 +34,7 @@ insertion sort beats alternatives :-)
 
 * [go][isort_go]
 * [coffeescript][isort_cs]
+* [C][isort_c]
 
 ### Merge Sort ###
 
@@ -50,6 +52,7 @@ insertion sort beats alternatives :-)
 
 [isort_go]:/sort/isort.go
 [isort_cs]:/sort/isort.coffee
+[isort_c]:/sort/isort.c
 
 [msort_go]:/sort/msort.go
 
