@@ -1,7 +1,7 @@
 all:
-	$(MAKE) -C sort
+	$(MAKE) -C src/sort
 
 test:
-	$(MAKE) test -C sort
+	$(MAKE) test -C src/sort
 
 .PHONY: all test
