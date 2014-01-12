@@ -4,4 +4,4 @@
 node_modules/
 
 # Binaries.
-src/sort/isort_test
+src/sort/c/isort_test

@@ -50,12 +50,12 @@ insertion sort beats alternatives :-)
 
 * [go][lsearch_go]
 
-[isort_go]:/sort/isort.go
-[isort_cs]:/sort/isort.coffee
-[isort_c]:/sort/isort.c
+[isort_go]:/src/sort/go/isort.go
+[isort_cs]:/src/sort/coffee/isort.coffee
+[isort_c]:/src/sort/c/isort.c
 
-[msort_go]:/sort/msort.go
+[msort_go]:/src/sort/go/msort.go
 
-[bsearch_go]:/search/bsearch.go
+[bsearch_go]:/src/search/go/bsearch.go
 
-[lsearch_go]:/search/lsearch.go
+[lsearch_go]:/src/search/go/lsearch.go
