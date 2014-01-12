@@ -32,30 +32,50 @@ insertion sort beats alternatives :-)
 
 ### Insertion Sort ###
 
+[Wikipedia Article][isort_wiki]
+
+#### Implementations ####
+
 * [go][isort_go]
 * [coffeescript][isort_cs]
 * [C][isort_c]
 
-### Merge Sort ###
-
-* [go][msort_go]
-
+[isort_wiki]:http://en.wikipedia.org/wiki/Insertion_sort
 [isort_go]:/src/sort/go/isort.go
 [isort_cs]:/src/sort/coffee/isort.coffee
 [isort_c]:/src/sort/c/isort.c
 
+### Merge Sort ###
+
+[Wikipedia Article][msort_wiki]
+
+#### Implementations ####
+
+* [go][msort_go]
+
+[msort_wiki]:http://en.wikipedia.org/wiki/Merge_sort
 [msort_go]:/src/sort/go/msort.go
 
 ## Searching ##
 
 ### Binary Search ###
 
+[Wikipedia Article][bsearch_wiki]
+
+#### Implementations ####
+
 * [go][bsearch_go]
+
+[bsearch_wiki]:http://en.wikipedia.org/wiki/Binary_search
+[bsearch_go]:/src/search/go/bsearch.go
 
 ### Linear Search ###
 
+[Wikipedia Article][lsearch_wiki]
+
+#### Implementations ####
+
 * [go][lsearch_go]
 
-[bsearch_go]:/src/search/go/bsearch.go
-
+[lsearch_wiki]:http://en.wikipedia.org/wiki/Linear_search
 [lsearch_go]:/src/search/go/lsearch.go
