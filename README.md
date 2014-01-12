@@ -40,6 +40,12 @@ insertion sort beats alternatives :-)
 
 * [go][msort_go]
 
+[isort_go]:/src/sort/go/isort.go
+[isort_cs]:/src/sort/coffee/isort.coffee
+[isort_c]:/src/sort/c/isort.c
+
+[msort_go]:/src/sort/go/msort.go
+
 ## Searching ##
 
 ### Binary Search ###
@@ -49,12 +55,6 @@ insertion sort beats alternatives :-)
 ### Linear Search ###
 
 * [go][lsearch_go]
-
-[isort_go]:/src/sort/go/isort.go
-[isort_cs]:/src/sort/coffee/isort.coffee
-[isort_c]:/src/sort/c/isort.c
-
-[msort_go]:/src/sort/go/msort.go
 
 [bsearch_go]:/src/search/go/bsearch.go
 
