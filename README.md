@@ -34,8 +34,6 @@ insertion sort beats alternatives :-)
 
 [Wikipedia Article][isort_wiki]
 
-#### Implementations ####
-
 * [go][isort_go]
 * [coffeescript][isort_cs]
 * [C][isort_c]
@@ -49,8 +47,6 @@ insertion sort beats alternatives :-)
 
 [Wikipedia Article][msort_wiki]
 
-#### Implementations ####
-
 * [go][msort_go]
 
 [msort_wiki]:http://en.wikipedia.org/wiki/Merge_sort
@@ -62,8 +58,6 @@ insertion sort beats alternatives :-)
 
 [Wikipedia Article][bsearch_wiki]
 
-#### Implementations ####
-
 * [go][bsearch_go]
 
 [bsearch_wiki]:http://en.wikipedia.org/wiki/Binary_search
@@ -72,8 +66,6 @@ insertion sort beats alternatives :-)
 ### Linear Search ###
 
 [Wikipedia Article][lsearch_wiki]
-
-#### Implementations ####
 
 * [go][lsearch_go]
 
