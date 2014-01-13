@@ -22,7 +22,7 @@ func readDict() []string {
 				panic(err)
 			}
 
-			// Strip newword.
+			// Strip newline.
 			word = word[:len(word)-1]
 			ret = append(ret, word)
 		}
