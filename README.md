@@ -71,3 +71,14 @@ insertion sort beats alternatives :-)
 
 [lsearch_wiki]:http://en.wikipedia.org/wiki/Linear_search
 [lsearch_go]:/src/search/go/lsearch.go
+
+## Graph ##
+
+### Trie ###
+
+[Wikipedia Article][trie_wiki]
+
+* [go][trie_go]
+
+[trie_wiki]:http://en.wikipedia.org/wiki/Trie
+[trie_go]:/src/trie/go
