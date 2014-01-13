@@ -46,13 +46,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Print("Reading dictionary... ")
+	fmt.Fprintf(os.Stderr, "Reading dictionary... ")
 	words := readDict()
-	fmt.Println("Done.")
+	fmt.Fprintln(os.Stderr, "Done.")
 
-	fmt.Print("Creating trie... ")
+	fmt.Fprintf(os.Stderr, "Creating trie... ")
 	trie := algoholic.NewTrieFromStrings(words)
-	fmt.Println("Done.")
+	fmt.Fprintln(os.Stderr, "Done.")
 
 	prefix := os.Args[1]
 
