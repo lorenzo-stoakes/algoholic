@@ -18,7 +18,7 @@ func NewRootTrie() *Trie {
 }
 
 func NewTrieFromMap(strMap map[string]interface{}) *Trie {
-	ret := NewTrie(RootTrie)
+	ret := NewRootTrie()
 
 	for str, val := range strMap {
 		ret.Insert(str, val)
