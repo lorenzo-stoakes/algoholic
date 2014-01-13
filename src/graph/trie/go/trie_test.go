@@ -2,7 +2,7 @@ package algoholic
 
 import "testing"
 
-var testSet = map[string]int{
+var testSet = map[string]interface{}{
 	"aha":    15,
 	"ahaha":  20,
 	"ahmah":  30,

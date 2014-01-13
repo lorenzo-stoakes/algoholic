@@ -5,20 +5,20 @@ type Trie struct {
 	Char     rune
 	Children map[rune]*Trie
 	Terminal bool
-	Value    int
+	Value    interface{}
 }
 
 const RootTrie = rune(0)
 
 func NewTrie(chr rune) *Trie {
-	return &Trie{chr, make(map[rune]*Trie), false, 0}
+	return &Trie{chr, make(map[rune]*Trie), false, nil}
 }
 
 func NewRootTrie() *Trie {
 	return NewTrie(RootTrie)
 }
 
-func NewTrieFromMap(strMap map[string]int) *Trie {
+func NewTrieFromMap(strMap map[string]interface{}) *Trie {
 	ret := NewTrie(RootTrie)
 
 	for str, val := range strMap {
@@ -29,9 +29,9 @@ func NewTrieFromMap(strMap map[string]int) *Trie {
 }
 
 func NewTrieFromStrings(strs []string) *Trie {
-	strMap := make(map[string]int)
+	strMap := make(map[string]interface{})
 	for _, str := range strs {
-		strMap[str] = 0
+		strMap[str] = nil
 	}
 
 	return NewTrieFromMap(strMap)
@@ -49,7 +49,7 @@ func (trie *Trie) FindTrie(str string) *Trie {
 	return nil
 }
 
-func (trie *Trie) Find(str string) (val int, has bool) {
+func (trie *Trie) Find(str string) (val interface{}, has bool) {
 	trie = trie.FindTrie(str)
 
 	if trie == nil || !trie.Terminal {
@@ -86,7 +86,7 @@ func (trie *Trie) FindSuffixes(prefix string) []string {
 	return ret
 }
 
-func (trie *Trie) Insert(str string, val int) {
+func (trie *Trie) Insert(str string, val interface{}) {
 	var (
 		i   int
 		chr rune
@@ -111,7 +111,7 @@ func (trie *Trie) Insert(str string, val int) {
 	trie.Value = val
 }
 
-func (trie *Trie) doWalk(trieMap map[string]int, prev []rune) {
+func (trie *Trie) doWalk(trieMap map[string]interface{}, prev []rune) {
 	if trie.Char != RootTrie {
 		prev = append(prev, trie.Char)
 	}
@@ -126,8 +126,8 @@ func (trie *Trie) doWalk(trieMap map[string]int, prev []rune) {
 	}
 }
 
-func (trie *Trie) Walk() map[string]int {
-	ret := make(map[string]int)
+func (trie *Trie) Walk() map[string]interface{} {
+	ret := make(map[string]interface{})
 	trie.doWalk(ret, nil)
 	return ret
 }
