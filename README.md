@@ -74,6 +74,17 @@ insertion sort beats alternatives :-)
 
 ## Graph ##
 
+### Binary Search Tree ###
+
+[Wikipedia Article][bsearchtree_wiki]
+
+#### Naive ####
+
+* [go][bsearchtree_go]
+
+[bsearchtree_wiki]:http://en.wikipedia.org/wiki/Binary_search_tree
+[bsearchtree_go]:/src/graph/btree/go/bsearch.go
+
 ### Trie ###
 
 [Wikipedia Article][trie_wiki]
