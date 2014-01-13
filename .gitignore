@@ -5,3 +5,5 @@ node_modules/
 
 # Binaries.
 src/sort/c/isort_test
+src/graph/trie/go/tools/prefix
+*.6
