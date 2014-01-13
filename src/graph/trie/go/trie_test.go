@@ -60,3 +60,24 @@ func TestTrieWalk(t *testing.T) {
 		}
 	}
 }
+
+func TestFindTrieSuffixes(t *testing.T) {
+	root := NewTrieFromMap(testSet)
+
+	ahs := root.FindSuffixes("ah")
+	checkStringSlicesEqual(t, ahs, []string{"aha", "ahaha", "ahmah"})
+
+	ahas := root.FindSuffixes("aha")
+	checkStringSlicesEqual(t, ahas, []string{"aha", "ahaha"})
+
+	foos := root.FindSuffixes("foo")
+	checkStringSlicesEqual(t, foos, []string{"foo", "foobar"})
+
+	zxys := root.FindSuffixes("zxy")
+	checkStringSlicesEqual(t, zxys, []string{"zxy"})
+
+	meshuggahAreVeryHeavys := root.FindSuffixes("Meshuggah really are VERY heavy.")
+	if len(meshuggahAreVeryHeavys) > 0 {
+		t.Fatalf("Invalid suffix search succeeded.")
+	}
+}

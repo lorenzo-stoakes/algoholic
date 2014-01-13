@@ -63,6 +63,29 @@ func (trie *Trie) Find(str string) (val int, has bool) {
 	return
 }
 
+func (trie *Trie) FindSuffixes(prefix string) []string {
+	trie = trie.FindTrie(prefix)
+
+	if trie == nil {
+		return nil
+	}
+
+	var ret []string
+
+	if trie.Terminal {
+		ret = append(ret, prefix)
+	}
+
+	for _, child := range trie.Children {
+		suffixMap := child.Walk()
+
+		for suffix := range suffixMap {
+			ret = append(ret, prefix+suffix)
+		}
+	}
+	return ret
+}
+
 func (trie *Trie) Insert(str string, val int) {
 	var (
 		i   int
