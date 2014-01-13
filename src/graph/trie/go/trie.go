@@ -14,6 +14,10 @@ func NewTrie(chr rune) *Trie {
 	return &Trie{chr, make(map[rune]*Trie), false, 0}
 }
 
+func NewRootTrie() *Trie {
+	return NewTrie(RootTrie)
+}
+
 func NewTrieFromMap(strMap map[string]int) *Trie {
 	ret := NewTrie(RootTrie)
 
