@@ -28,12 +28,13 @@ func NewTrieFromMap(strMap map[string]interface{}) *Trie {
 }
 
 func NewTrieFromStrings(strs []string) *Trie {
-	strMap := make(map[string]interface{})
+	ret := NewRootTrie()
+
 	for _, str := range strs {
-		strMap[str] = nil
+		ret.Insert(str, nil)
 	}
 
-	return NewTrieFromMap(strMap)
+	return ret
 }
 
 func (trie *Trie) FindTrie(str string) *Trie {
