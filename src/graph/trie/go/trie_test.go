@@ -41,3 +41,24 @@ func TestNewTrieFromMap(t *testing.T) {
 		}
 	}
 }
+
+func TestTrieWalk(t *testing.T) {
+	root := NewTrieFromMap(testSet)
+
+	actualSet := root.Walk()
+
+	if len(actualSet) != len(testSet) {
+		t.Fatal("Mismatched set lengths.")
+	}
+
+	for word, expected := range testSet {
+		if actual, has := actualSet[word]; has {
+			if actual != expected {
+				t.Fatalf("Word '%s' was expected to have value %d, but has %d.",
+					word, expected, actual)
+			}
+		} else {
+			t.Fatalf("Word '%s' from input set not found in Walk() output set.", word)
+		}
+	}
+}

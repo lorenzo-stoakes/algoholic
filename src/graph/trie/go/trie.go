@@ -87,3 +87,24 @@ func (trie *Trie) Insert(str string, val int) {
 	trie.Terminal = true
 	trie.Value = val
 }
+
+func (trie *Trie) doWalk(trieMap map[string]int, prev []rune) {
+	if trie.Char != RootTrie {
+		prev = append(prev, trie.Char)
+	}
+
+	if trie.Terminal {
+		str := string(prev)
+		trieMap[str] = trie.Value
+	}
+
+	for _, child := range trie.Children {
+		child.doWalk(trieMap, prev)
+	}
+}
+
+func (trie *Trie) Walk() map[string]int {
+	ret := make(map[string]int)
+	trie.doWalk(ret, nil)
+	return ret
+}
