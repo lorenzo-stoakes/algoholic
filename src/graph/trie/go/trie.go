@@ -1,6 +1,5 @@
 package algoholic
 
-// Trie of characters mapped to int.
 type Trie struct {
 	Char     rune
 	Children map[rune]*Trie
