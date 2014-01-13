@@ -81,4 +81,4 @@ insertion sort beats alternatives :-)
 * [go][trie_go]
 
 [trie_wiki]:http://en.wikipedia.org/wiki/Trie
-[trie_go]:/src/trie/go
+[trie_go]:/src/graph/trie/go/trie.go
