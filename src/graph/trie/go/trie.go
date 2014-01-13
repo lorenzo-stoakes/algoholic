@@ -28,6 +28,15 @@ func NewTrieFromMap(strMap map[string]int) *Trie {
 	return ret
 }
 
+func NewTrieFromStrings(strs []string) *Trie {
+	strMap := make(map[string]int)
+	for _, str := range strs {
+		strMap[str] = 0
+	}
+
+	return NewTrieFromMap(strMap)
+}
+
 func (trie *Trie) FindTrie(str string) *Trie {
 	if len(str) == 0 {
 		return trie
