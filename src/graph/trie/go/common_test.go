@@ -1,6 +1,9 @@
 package algoholic
 
-import "testing"
+import (
+	"sort"
+	"testing"
+)
 
 func checkTrieHasChildren(t *testing.T, root *Trie, search, children string) {
 	trie := root.FindTrie(search)
@@ -32,6 +35,9 @@ func checkStringSlicesEqual(t *testing.T, slice1, slice2 []string) {
 	if len(slice1) != len(slice2) {
 		t.Fatalf("Slice lengths %d and %d differ.", len(slice1), len(slice2))
 	}
+
+	sort.StringSlice(slice1).Sort()
+	sort.StringSlice(slice2).Sort()
 
 	for i, str1 := range slice1 {
 		str2 := slice2[i]
