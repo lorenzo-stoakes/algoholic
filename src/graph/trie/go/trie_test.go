@@ -1,8 +1,6 @@
 package algoholic
 
-import (
-	"testing"
-)
+import "testing"
 
 var testSet = map[string]int{
 	"aha":    15,
