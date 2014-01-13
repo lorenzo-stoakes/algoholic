@@ -28,7 +28,7 @@ benchmark. Use `go test -benchtime 0.3s -bench .` or similar (varying the time t
 reduce this time. Interestingly reducing the time significantly can highlight cases where
 insertion sort beats alternatives :-)
 
-## Sorting ##
+## Sort ##
 
 ### Insertion Sort ###
 
@@ -52,7 +52,7 @@ insertion sort beats alternatives :-)
 [msort_wiki]:http://en.wikipedia.org/wiki/Merge_sort
 [msort_go]:/src/sort/go/msort.go
 
-## Searching ##
+## Search ##
 
 ### Binary Search ###
 
