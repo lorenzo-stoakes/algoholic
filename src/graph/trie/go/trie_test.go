@@ -81,3 +81,18 @@ func TestFindTrieSuffixes(t *testing.T) {
 		t.Fatalf("Invalid suffix search succeeded.")
 	}
 }
+
+func BenchmarkTrieFind(b *testing.B) {
+	root := NewTrieFromMap(testSet)
+
+	var strs []string
+	for str := range testSet {
+		strs = append(strs, str)
+	}
+
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		root.Find(strs[i%len(strs)])
+	}
+}
