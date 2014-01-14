@@ -82,7 +82,7 @@ insertion sort beats alternatives :-)
 
 * [go][btree_go]
 
-#### Naive ####
+#### Naive Implementation ####
 
 * [go][bsearchtree_go]
 
