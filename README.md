@@ -78,12 +78,17 @@ insertion sort beats alternatives :-)
 
 [Wikipedia Article][bsearchtree_wiki]
 
+#### Data Structure ####
+
+* [go][btree_go]
+
 #### Naive ####
 
 * [go][bsearchtree_go]
 
 [bsearchtree_wiki]:http://en.wikipedia.org/wiki/Binary_search_tree
 [bsearchtree_go]:/src/graph/btree/go/bsearch.go
+[btree_go]:/src/graph/btree/go/btree.go
 
 ### Trie ###
 
