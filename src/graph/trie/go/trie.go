@@ -1,5 +1,8 @@
 package algoholic
 
+// A trie is a data structure which stores words in a tree by letter, when the letters form a
+// valid string, the node is marked terminal and a value can be stored.
+
 type Trie struct {
 	Char     rune
 	Children map[rune]*Trie
@@ -7,8 +10,11 @@ type Trie struct {
 	Value    interface{}
 }
 
+// A value indicating that the node is the root node, thus it doesn't denote a character
+// itself.
 const RootTrie = rune(0)
 
+// Create a new trie with the specified character.
 func NewTrie(chr rune) *Trie {
 	return &Trie{chr, make(map[rune]*Trie), false, nil}
 }
@@ -17,6 +23,7 @@ func NewRootTrie() *Trie {
 	return NewTrie(RootTrie)
 }
 
+// Create a new trie with strings mapped to specified values.
 func NewTrieFromMap(strMap map[string]interface{}) *Trie {
 	ret := NewRootTrie()
 
@@ -27,6 +34,7 @@ func NewTrieFromMap(strMap map[string]interface{}) *Trie {
 	return ret
 }
 
+// Create a new trie with strings whose values we don't care about.
 func NewTrieFromStrings(strs []string) *Trie {
 	ret := NewRootTrie()
 
@@ -37,6 +45,9 @@ func NewTrieFromStrings(strs []string) *Trie {
 	return ret
 }
 
+// Find the specified string and return its trie node.
+// O(m) worst-case where m is the length of the string searched for.
+// Note this returns non-terminal nodes.
 func (trie *Trie) FindTrie(str string) *Trie {
 	if len(str) == 0 {
 		return trie
@@ -49,6 +60,8 @@ func (trie *Trie) FindTrie(str string) *Trie {
 	return nil
 }
 
+// Find the specified string and return its value.
+// O(m) worst-case where m is the length of the string searched for.
 func (trie *Trie) Find(str string) (val interface{}, has bool) {
 	trie = trie.FindTrie(str)
 
@@ -63,6 +76,8 @@ func (trie *Trie) Find(str string) (val interface{}, has bool) {
 	return
 }
 
+// Find all valid strings that consist of suffixes of the input prefix.
+// O(m) worst-case where m is the length of the longest returned string.
 func (trie *Trie) FindSuffixes(prefix string) []string {
 	trie = trie.FindTrie(prefix)
 
@@ -79,6 +94,8 @@ func (trie *Trie) FindSuffixes(prefix string) []string {
 	return ret
 }
 
+// Insert string, value pair into the specified trie.
+// O(m) worst-case where m is the length of the inserted string.
 func (trie *Trie) Insert(str string, val interface{}) {
 	var (
 		i   int
@@ -104,7 +121,12 @@ func (trie *Trie) Insert(str string, val interface{}) {
 	trie.Value = val
 }
 
+// Recursively walk through all children of the input trie, adding string, value pairs to
+// trieMap as the walk is performed. Trie is traversed in pre-order.
+// O(n) where n is the number of nodes in the input trie.
 func (trie *Trie) doWalk(trieMap map[string]interface{}, prev []rune) {
+	// TODO: Use something other than a hash for map to allow alphabetical output ordering.
+
 	if trie.Char != RootTrie {
 		prev = append(prev, trie.Char)
 	}
@@ -119,6 +141,9 @@ func (trie *Trie) doWalk(trieMap map[string]interface{}, prev []rune) {
 	}
 }
 
+// Recursively walk through all children of the input trie, returning a map of string, value
+// pairs.
+// O(n) where n is the number of nodes in the input trie.
 func (trie *Trie) Walk() map[string]interface{} {
 	ret := make(map[string]interface{})
 	trie.doWalk(ret, nil)
