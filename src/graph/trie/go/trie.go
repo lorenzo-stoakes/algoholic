@@ -63,15 +63,15 @@ func (trie *Trie) FindTrie(str string) *Trie {
 // Find the specified string and return its value.
 // O(m) worst-case where m is the length of the string searched for.
 func (trie *Trie) Find(str string) (val interface{}, has bool) {
-	trie = trie.FindTrie(str)
+	ret := trie.FindTrie(str)
 
-	if trie == nil || !trie.Terminal {
+	if ret == nil || !ret.Terminal {
 		// Not found.
 		return
 	}
 
 	has = true
-	val = trie.Value
+	val = ret.Value
 
 	return
 }
