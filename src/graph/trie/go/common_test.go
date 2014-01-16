@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// Ensure trie has child nodes with the characters contained in the children string.
 func checkTrieHasChildren(t *testing.T, root *Trie, search, children string) {
 	trie := root.FindTrie(search)
 
@@ -31,6 +32,7 @@ func checkTrieHasChildren(t *testing.T, root *Trie, search, children string) {
 	}
 }
 
+// Simple helper function to check that two slices are equal, regardless of order.
 func checkStringSlicesEqual(t *testing.T, slice1, slice2 []string) {
 	if len(slice1) != len(slice2) {
 		t.Fatalf("Slice lengths %d and %d differ.", len(slice1), len(slice2))
