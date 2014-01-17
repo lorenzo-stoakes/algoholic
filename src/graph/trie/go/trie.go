@@ -122,24 +122,18 @@ func (trie *Trie) Insert(str string, val interface{}) {
 	trie.Value = val
 }
 
-// Recursively walk through all children of the input trie, adding string, value pairs to
-// trieMap as the walk is performed. Trie is traversed in pre-order.
-// O(n) where n is the number of nodes in the input trie.
-func (trie *Trie) doWalk(trieMap map[string]interface{}, prev []rune) {
-	// TODO: Use something other than a hash for map to allow alphabetical output ordering.
+// The String() function for a trie is its characters from root to node.
+func (trie *Trie) String() string {
+	var chrs []rune
 
-	if trie.Char != RootTrie {
-		prev = append(prev, trie.Char)
+	for ; trie != nil && trie.Char != RootTrieChar; trie = trie.Parent {
+		chr := trie.Char
+
+		chrs = append([]rune{chr}, chrs...)
 	}
 
-	if trie.Terminal {
-		str := string(prev)
-		trieMap[str] = trie.Value
-	}
-
-	for _, child := range trie.Children {
-		child.doWalk(trieMap, prev)
-	}
+	return string(chrs)
+}
 
 // Recursively walk through all children of the input trie, returning a map of string, value
 // pairs.
