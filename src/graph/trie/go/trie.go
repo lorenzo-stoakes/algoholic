@@ -88,8 +88,8 @@ func (trie *Trie) FindSuffixes(prefix string) []string {
 
 	var ret []string
 
-	for suffix := range trie.Walk() {
-		ret = append(ret, prefix+suffix[1:])
+	for str, _ := range trie.ToMap() {
+		ret = append(ret, str)
 	}
 
 	return ret

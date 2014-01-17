@@ -40,10 +40,10 @@ func TestNewTrieFromMap(t *testing.T) {
 	}
 }
 
-func TestTrieWalk(t *testing.T) {
+func TestTrieToMap(t *testing.T) {
 	root := NewTrieFromMap(testSet)
 
-	actualSet := root.Walk()
+	actualSet := root.ToMap()
 
 	if len(actualSet) != len(testSet) {
 		t.Fatal("Mismatched set lengths.")
