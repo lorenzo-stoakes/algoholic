@@ -140,6 +140,20 @@ func (trie *Trie) doWalk(trieMap map[string]interface{}, prev []rune) {
 	for _, child := range trie.Children {
 		child.doWalk(trieMap, prev)
 	}
+
+// Recursively walk through all children of the input trie, returning a map of string, value
+// pairs.
+// O(n) where n is the number of nodes in the input trie.
+func (trie *Trie) ToMap() map[string]interface{} {
+	ret := make(map[string]interface{})
+
+	trie.Walk(func(node *Trie) {
+		if node.Terminal {
+			ret[node.String()] = node.Value
+		}
+	})
+
+	return ret
 }
 
 // Recursively walk through all children of the input trie in preorder executing the specified
