@@ -5,6 +5,7 @@ package algoholic
 
 type Trie struct {
 	Char     rune
+	Parent   *Trie
 	Children map[rune]*Trie
 	Terminal bool
 	Value    interface{}
@@ -14,13 +15,13 @@ type Trie struct {
 // itself.
 const RootTrie = rune(0)
 
-// Create a new trie with the specified character.
-func NewTrie(chr rune) *Trie {
-	return &Trie{chr, make(map[rune]*Trie), false, nil}
+// Create a new trie with the specified character and parent.
+func NewTrie(parent *Trie, chr rune) *Trie {
+	return &Trie{chr, parent, make(map[rune]*Trie), false, nil}
 }
 
 func NewRootTrie() *Trie {
-	return NewTrie(RootTrie)
+	return NewTrie(nil, RootTrieChar)
 }
 
 // Create a new trie with strings mapped to specified values.
@@ -113,7 +114,7 @@ func (trie *Trie) Insert(str string, val interface{}) {
 
 	// Insert nodes as necessary.
 	for _, chr = range str[i:] {
-		next := NewTrie(chr)
+		next := NewTrie(trie, chr)
 		trie.Children[chr] = next
 		trie = next
 	}
