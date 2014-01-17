@@ -56,7 +56,8 @@ func TestTrieWalk(t *testing.T) {
 					word, expected, actual)
 			}
 		} else {
-			t.Fatalf("Word '%s' from input set not found in Walk() output set.", word)
+			t.Fatalf("Word '%s' from input set not found in ToMap() output set %v.", word,
+				actualSet)
 		}
 	}
 }
