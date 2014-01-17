@@ -44,7 +44,9 @@ func checkStringSlicesEqual(t *testing.T, slice1, slice2 []string) {
 	for i, str1 := range slice1 {
 		str2 := slice2[i]
 		if str1 != str2 {
-			t.Fatalf("Slice mismatch at index %d, %s != %s.", i, str1, str2)
+			t.Errorf("Slice mismatch at index %d, %s != %s - %v vs. %v.", i, str1, str2,
+				slice1, slice2)
+			return
 		}
 	}
 }
