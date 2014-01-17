@@ -13,7 +13,7 @@ type Trie struct {
 
 // A value indicating that the node is the root node, thus it doesn't denote a character
 // itself.
-const RootTrie = rune(0)
+const RootTrieChar = rune(0)
 
 // Create a new trie with the specified character and parent.
 func NewTrie(parent *Trie, chr rune) *Trie {
