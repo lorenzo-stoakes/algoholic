@@ -142,11 +142,12 @@ func (trie *Trie) doWalk(trieMap map[string]interface{}, prev []rune) {
 	}
 }
 
-// Recursively walk through all children of the input trie, returning a map of string, value
-// pairs.
-// O(n) where n is the number of nodes in the input trie.
-func (trie *Trie) Walk() map[string]interface{} {
-	ret := make(map[string]interface{})
-	trie.doWalk(ret, nil)
-	return ret
+// Recursively walk through all children of the input trie in preorder executing the specified
+// function on each trie node.
+//O(n) where n is the number of nodes in the input trie.
+func (trie *Trie) Walk(fn func(*Trie)) {
+	fn(trie)
+	for _, child := range trie.Children {
+		child.Walk(fn)
+	}
 }
