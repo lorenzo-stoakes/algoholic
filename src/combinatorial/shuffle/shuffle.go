@@ -3,9 +3,14 @@ package algoholic
 import (
 	"math/rand"
 	"sort"
+	"time"
 )
 
 type RandomOrderSlice []int
+
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
 func (slice RandomOrderSlice) Len() int {
 	return len(slice)
