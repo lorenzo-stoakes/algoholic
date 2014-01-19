@@ -98,3 +98,14 @@ insertion sort beats alternatives :-)
 
 [trie_wiki]:http://en.wikipedia.org/wiki/Trie
 [trie_go]:/src/graph/trie/go/trie.go
+
+## Combinatorics ##
+
+### Fisher-Yates Shuffle ###
+
+[Wikipedia Article][fisher-yates_wiki]
+
+* [go][fisher-yates_go]
+
+[fisher-yates_wiki]:http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+[fisher-yates_go]:/src/combinatorial/shuffle/shuffle.go
