@@ -23,7 +23,7 @@ func (slice RandomOrderSlice) Less(i, j int) bool {
 // O(n) assuming an O(1) PRNG.
 func ShuffleFisherYates(ns []int) {
 	for i := len(ns) - 1; i >= 1; i-- {
-		j := rand.Int31n(int32(i + 1))
+		j := rand.Intn(i + 1)
 		ns[i], ns[j] = ns[j], ns[i]
 	}
 }
