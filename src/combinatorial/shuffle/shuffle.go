@@ -1,6 +1,23 @@
 package algoholic
 
-import "math/rand"
+import (
+	"math/rand"
+	"sort"
+)
+
+type RandomOrderSlice []int
+
+func (slice RandomOrderSlice) Len() int {
+	return len(slice)
+}
+
+func (slice RandomOrderSlice) Swap(i, j int) {
+	slice[i], slice[j] = slice[j], slice[i]
+}
+
+func (slice RandomOrderSlice) Less(i, j int) bool {
+	return rand.Float64() < 0.5
+}
 
 // In-place Fisher-Yates shuffle.
 // O(n) assuming an O(1) PRNG.
@@ -9,4 +26,10 @@ func ShuffleFisherYates(ns []int) {
 		j := rand.Int31n(int32(i + 1))
 		ns[i], ns[j] = ns[j], ns[i]
 	}
+}
+
+// In-place shuffle using a sort based on a random number.
+// O(n log n) assuming an O(1) PRNG.
+func ShuffleRandomSort(ns []int) {
+	sort.Sort(RandomOrderSlice(ns))
 }

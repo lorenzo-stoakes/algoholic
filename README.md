@@ -105,7 +105,11 @@ insertion sort beats alternatives :-)
 
 [Wikipedia Article][fisher-yates_wiki]
 
-* [go][fisher-yates_go]
+* [go][shuffle_go]
 
-[fisher-yates_wiki]:http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
-[fisher-yates_go]:/src/combinatorial/shuffle/shuffle.go
+### Random-Sort Shuffle ###
+
+* [go][shuffle_go]
+
+[shuffle_wiki]:http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+[shuffle_go]:/src/combinatorial/shuffle/shuffle.go
