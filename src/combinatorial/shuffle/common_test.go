@@ -53,3 +53,13 @@ func checkShufflesEvenly(t *testing.T, shuffle func([]int), length, iters int, m
 		}
 	}
 }
+
+func benchmarkShuffle(b *testing.B, count int, shuffle func([]int)) {
+	ns := generateSlice(count)
+
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		shuffle(ns)
+	}
+}
