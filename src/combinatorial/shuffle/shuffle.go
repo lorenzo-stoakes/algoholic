@@ -8,9 +8,12 @@ import (
 
 type RandomOrderSlice []int
 
+// Seed the PRNG on startup.
 func init() {
 	rand.Seed(time.Now().UnixNano())
 }
+
+// Implement RandomOrderSlice sort.Interface.
 
 func (slice RandomOrderSlice) Len() int {
 	return len(slice)
