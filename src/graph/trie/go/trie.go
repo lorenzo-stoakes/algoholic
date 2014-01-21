@@ -5,8 +5,8 @@ package algoholic
 
 type Trie struct {
 	Char     rune
-	Parent   *Trie
 	Children map[rune]*Trie
+	Parent   *Trie
 	Terminal bool
 	Value    interface{}
 }
