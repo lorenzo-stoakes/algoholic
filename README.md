@@ -39,11 +39,13 @@ insertion sort beats alternatives :-)
 * [go][isort_go]
 * [coffeescript][isort_cs]
 * [C][isort_c]
+* [C++][isort_cc]
 
 [isort_wiki]:http://en.wikipedia.org/wiki/Insertion_sort
 [isort_go]:/src/sort/go/isort.go
 [isort_cs]:/src/sort/coffee/isort.coffee
 [isort_c]:/src/sort/c/isort.c
+[isort_cc]:/src/sort/cc/isort.cc
 
 ### Merge Sort ###
 
