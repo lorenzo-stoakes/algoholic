@@ -4,8 +4,8 @@
 
 Algoholic is a collection of many algorithms in many different languages.
 
-The idea is for me to have a project in which to practice the design and implementation of
-algorithms, perhaps others will find it useful.
+My motivation for the project is to have somewhere I can practice the design and implementation
+of algorithms.
 
 No claim is made as to the efficiency of the algorithms, and emphasis is put on making the
 implementation of the algorithms as clear as possible so there is heavy commenting
