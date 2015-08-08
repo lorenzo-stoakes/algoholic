@@ -1,8 +1,6 @@
 # Temporary files.
 .#*
 
-node_modules/
-
 # Binaries.
 src/sort/c/isort_test
 src/sort/cc/isort

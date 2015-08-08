@@ -1,8 +1,0 @@
-{
-  "name": "algoholic",
-  "version": "0.0.1",
-  "description": "A collection of algorithms.",
-	"devDependencies": {
-		"mocha": "~1.16.2"
-	}
-}
