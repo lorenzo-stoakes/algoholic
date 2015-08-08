@@ -1,53 +1,28 @@
-# Algoholic #
+# Algoholic
 
-## Introduction ##
+## Introduction
 
-Algoholic is a collection of many algorithms in many different languages.
+Algoholic is a collection of algorithms in Go and C.
 
 My motivation for the project is to have somewhere I can practice the design and implementation
 of algorithms.
 
-No claim is made as to the efficiency of the algorithms, and emphasis is put on making the
-implementation of the algorithms as clear as possible so there is heavy commenting
-throughout. Production implementations of these algorithms should probably include fewer
-comments :-)
+## Instructions
 
-## Instructions ##
+## Sort
 
-To run code testing the algorithm implementations, execute the following in the appropriate
-directory:-
-
-* Go - `go test`
-* Coffeescript - Ensure you've run `npm install` and have mocha installed via `npm install -g
-  mocha`. Then run `./runCoffeeTests.sh` in the project root directory.
-* C - Run `make test`. You can also run this in the project root directory to run all tests. If
-  there is no output, the tests passed :)
-
-To benchmark go code run `go test -bench .` in the appropriate directory.
-
-__Note__ in `sort/`, `go test -bench .` will take a long while to complete the insertion sort
-benchmark. Use `go test -benchtime 0.3s -bench .` or similar (varying the time to taste) to
-reduce this time. Interestingly reducing the time significantly can highlight cases where
-insertion sort beats alternatives :-)
-
-## Sort ##
-
-### Insertion Sort ###
+### Insertion Sort
 
 [Wikipedia Article][isort_wiki]
 
 * [go][isort_go]
-* [coffeescript][isort_cs]
 * [C][isort_c]
-* [C++][isort_cc]
 
 [isort_wiki]:http://en.wikipedia.org/wiki/Insertion_sort
 [isort_go]:/src/sort/go/isort.go
-[isort_cs]:/src/sort/coffee/isort.coffee
 [isort_c]:/src/sort/c/isort.c
-[isort_cc]:/src/sort/cc/isort.cc
 
-### Merge Sort ###
+### Merge Sort
 
 [Wikipedia Article][msort_wiki]
 
@@ -56,9 +31,9 @@ insertion sort beats alternatives :-)
 [msort_wiki]:http://en.wikipedia.org/wiki/Merge_sort
 [msort_go]:/src/sort/go/msort.go
 
-## Search ##
+## Search
 
-### Binary Search ###
+### Binary Search
 
 [Wikipedia Article][bsearch_wiki]
 
@@ -67,7 +42,7 @@ insertion sort beats alternatives :-)
 [bsearch_wiki]:http://en.wikipedia.org/wiki/Binary_search
 [bsearch_go]:/src/search/go/bsearch.go
 
-### Linear Search ###
+### Linear Search
 
 [Wikipedia Article][lsearch_wiki]
 
@@ -76,17 +51,17 @@ insertion sort beats alternatives :-)
 [lsearch_wiki]:http://en.wikipedia.org/wiki/Linear_search
 [lsearch_go]:/src/search/go/lsearch.go
 
-## Graph ##
+## Graph
 
-### Binary Search Tree ###
+### Binary Search Tree
 
 [Wikipedia Article][bsearchtree_wiki]
 
-#### Data Structure ####
+#### Data Structure
 
 * [go][btree_go]
 
-#### Naive Implementation ####
+#### Naive Implementation
 
 * [go][bsearchtree_go]
 
@@ -103,15 +78,15 @@ insertion sort beats alternatives :-)
 [trie_wiki]:http://en.wikipedia.org/wiki/Trie
 [trie_go]:/src/graph/trie/go/trie.go
 
-## Combinatorics ##
+## Combinatorics
 
-### Fisher-Yates Shuffle ###
+### Fisher-Yates Shuffle
 
 [Wikipedia Article][fisher-yates_wiki]
 
 * [go][shuffle_go]
 
-### Random-Sort Shuffle ###
+### Random-Sort Shuffle
 
 * [go][shuffle_go]
 
