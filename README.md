@@ -7,8 +7,6 @@ Algoholic is a collection of algorithms in Go and C.
 My motivation for the project is to have somewhere I can practice the design and implementation
 of algorithms.
 
-## Instructions
-
 ## Sort
 
 ### Insertion Sort
@@ -50,45 +48,3 @@ of algorithms.
 
 [lsearch_wiki]:http://en.wikipedia.org/wiki/Linear_search
 [lsearch_go]:/src/search/go/lsearch.go
-
-## Graph
-
-### Binary Search Tree
-
-[Wikipedia Article][bsearchtree_wiki]
-
-#### Data Structure
-
-* [go][btree_go]
-
-#### Naive Implementation
-
-* [go][bsearchtree_go]
-
-[bsearchtree_wiki]:http://en.wikipedia.org/wiki/Binary_search_tree
-[bsearchtree_go]:/src/graph/btree/go/bsearch.go
-[btree_go]:/src/graph/btree/go/btree.go
-
-### Trie ###
-
-[Wikipedia Article][trie_wiki]
-
-* [go][trie_go]
-
-[trie_wiki]:http://en.wikipedia.org/wiki/Trie
-[trie_go]:/src/graph/trie/go/trie.go
-
-## Combinatorics
-
-### Fisher-Yates Shuffle
-
-[Wikipedia Article][fisher-yates_wiki]
-
-* [go][shuffle_go]
-
-### Random-Sort Shuffle
-
-* [go][shuffle_go]
-
-[shuffle_wiki]:http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
-[shuffle_go]:/src/combinatorial/shuffle/shuffle.go
