@@ -6,7 +6,7 @@ package algoholic
 // Linear Search, O(n) worst-case.
 func LinearSearch(ns []int, n int) int {
 	// Simply iterate through every item in the slice, short-circuiting and returning should we
-	// find the saught value.
+	// find the sought value.
 	for i, m := range ns {
 		if m == n {
 			return i
