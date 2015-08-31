@@ -59,26 +59,26 @@ int *isort(int ns[], int n)
 	 */
 
 	/* Loop Invariant: ns[0, i) is sorted. */
-	for(i = 1; i < n; i++) {
+	for (i = 1; i < n; i++) {
 		key = ns[i];
 		/*
 		 * We loop over each of the sorted elements which belong to the
 		 * 'right' of the key and move them up a place overwriting their
 		 * neighbour.
 		 */
-		for(j = i-1; j >= 0 && key < ns[j]; j--)
-			ns[j+1] = ns[j];
+		for (j = i - 1; j >= 0 && key < ns[j]; j--)
+			ns[j + 1] = ns[j];
 		/* Finally we have the correct index to place our key value. */
-		ns[j+1] = key;
+		ns[j + 1] = key;
 		/*
 		 * Now the loop invariant is established for ns[0, i+1) and thus
 		 * we can increment i and loop again.
 		 */
 	}
+
 	/*
 	 * Once the loop is complete the loop invariant specifies that ns[0, n)
 	 * is sorted, i.e. ns is sorted and the sort has succeeded.
 	 */
-
 	return ns;
 }

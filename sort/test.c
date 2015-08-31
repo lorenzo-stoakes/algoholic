@@ -9,18 +9,18 @@ const int N = 1e4;
  * Sort a reversed set of integers and check that they are correctly sorted
  * afterwards.
  */
-void run_test(sort_fn_t sort)
+static void run_test(sort_fn_t sort)
 {
 	int i;
 	int *ns = calloc(sizeof(int), N);
 
-	for(i = 0; i < N; i++)
+	for (i = 0; i < N; i++)
 		ns[i] = N - i;
 
 	ns = sort(ns, N);
 
-	for(i = 0; i < N; i++) {
-		if(ns[i] != i+1) {
+	for (i = 0; i < N; i++) {
+		if (ns[i] != i+1) {
 			fprintf(stderr, "Index %d is %d, expected %d.\n", i,
 				ns[i], i+1);
 		}
