@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #include "sort.h"
 
 /*
@@ -54,9 +56,10 @@
  * 3. We can do all of this 'in place' by merely swapping around elements so the
  * algorithm uses constant time memory in all cases.
  */
-int *algoholic_isort(int ns[], const int len)
+int *algoholic_isort(int ns[], const ssize_t len)
 {
-	int i, j, key;
+	ssize_t i, j;
+	int key;
 
 	/* INVARIANT: ns[0, i) is sorted. */
 	for (i = 1; i < len; i++) {

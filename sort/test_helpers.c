@@ -4,14 +4,14 @@
 
 #include "test.h"
 
-bool check_array(const int ns[], const int len)
+bool check_array(const int ns[], const size_t len)
 {
-	int i;
+	size_t i;
 	bool ret = true;
 
 	for (i = 1; i < len; i++) {
 		if (ns[i - 1] > ns[i]) {
-			fprintf(stderr, "ns[%d], ns[%d] == %d, %d\n", i,
+			fprintf(stderr, "ns[%zu], ns[%zu] == %d, %d\n", i,
 				i + 1, ns[i], ns[i + 1]);
 			ret = false;
 		}
@@ -20,7 +20,7 @@ bool check_array(const int ns[], const int len)
 	return ret;
 }
 
-int next_val(int index, const int len, const enum array_type type)
+int next_val(int index, const size_t len, const enum array_type type)
 {
 	switch (type) {
 	case ARR_REVERSE_SORTED:
@@ -35,9 +35,9 @@ int next_val(int index, const int len, const enum array_type type)
 	exit(EXIT_FAILURE);
 }
 
-int *gen_array(const int len, const enum array_type type)
+int *gen_array(const size_t len, const enum array_type type)
 {
-	int i;
+	size_t i;
 	int *ret = calloc(sizeof(int), len);
 
 	for (i = 0; i < len; i++)
@@ -46,7 +46,8 @@ int *gen_array(const int len, const enum array_type type)
 	return ret;
 }
 
-bool test_sort(const sort_fn_t sort, const int len, const enum array_type type)
+bool test_sort(const sort_fn_t sort, const size_t len,
+	const enum array_type type)
 {
 	bool ret;
 	int *ns = gen_array(len, type);
