@@ -3,6 +3,6 @@
 
 typedef int *(*sort_fn_t)(int[], const int);
 
-int *isort(int ns[], const int n);
+int *isort(int ns[], const int len);
 
 #endif

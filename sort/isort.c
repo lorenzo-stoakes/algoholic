@@ -15,7 +15,7 @@
  *   Average: O(1)
  *      Best: O(1)
  */
-int *isort(int ns[], const int n)
+int *isort(int ns[], const int len)
 {
 	int i, j, key;
 
@@ -59,7 +59,7 @@ int *isort(int ns[], const int n)
 	 */
 
 	/* Loop Invariant: ns[0, i) is sorted. */
-	for (i = 1; i < n; i++) {
+	for (i = 1; i < len; i++) {
 		key = ns[i];
 		/*
 		 * We loop over each of the sorted elements which belong to the
