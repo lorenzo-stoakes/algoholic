@@ -51,12 +51,13 @@ static bool test_sort_timed(const sort_fn_t sort, const size_t len,
 			const enum array_type type, bool check, time_t *takenp)
 {
 	bool ret = true;
-	clock_t start;
+	clock_t start, clocks;
 	int *ns = gen_array(len, type);
 
 	start = clock();
 	ns = sort(ns, len);
-	*takenp = clock() - start;
+	clocks = clock() - start;
+	*takenp = 1000 * clocks / CLOCKS_PER_SEC;
 
 	if (check)
 		ret = check_array(ns, len);
@@ -79,4 +80,22 @@ void test_failure(const char *name, const bool fatal)
 
 	if (fatal)
 		exit(EXIT_FAILURE);
+}
+
+size_t get_reasonable_length(sort_fn_t sort)
+{
+	size_t ret = 1000;
+	time_t duration = 0;
+
+	while (duration < MAX_SORT_DURATION_MS) {
+		test_sort_timed(sort, ret, ARR_REVERSE_SORTED, false,
+				&duration);
+
+		if (duration < MAX_SORT_DURATION_MS / 2)
+			ret *= 2;
+		else
+			ret *= 1.2;
+	}
+
+	return ret;
 }
