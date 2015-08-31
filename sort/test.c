@@ -21,7 +21,8 @@ int main(void)
 
 	for(i = 0; i < N; i++) {
 		if(ns[i] != i+1) {
-			fprintf(stderr, "Index %d is %d, expected %d.\n", i, ns[i], i+1);
+			fprintf(stderr, "Index %d is %d, expected %d.\n", i,
+				ns[i], i+1);
 			exit(EXIT_FAILURE);
 		}
 	}
