@@ -1,21 +1,23 @@
 #include "sort.h"
 
 /*
- * Insertion Sort
+ * # Insertion Sort
  *
  * https://en.wikipedia.org/wiki/Insertion_sort
  *
+ * ## Complexity
+ *
  * Time
- *     Worst: O(n^2)
- *   Average: O(n^2)
- *      Best: O(n)
+ * -   Worst: O(n^2)
+ * - Average: O(n^2)
+ * -    Best: O(n)
  *
  * Memory
- *     Worst: O(1)
- *   Average: O(1)
- *      Best: O(1)
+ * -   Worst: O(1)
+ * - Average: O(1)
+ * -    Best: O(1)
  *
- * ---
+ * ## Description
  *
  * The key concept of insertion sort is to divide the input array into into
  * sorted and unsorted subarrays and iteratively insert elements from the
