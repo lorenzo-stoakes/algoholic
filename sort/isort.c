@@ -15,7 +15,7 @@
  *   Average: O(1)
  *      Best: O(1)
  */
-int *isort(int ns[], int n)
+int *isort(int ns[], const int n)
 {
 	int i, j, key;
 
