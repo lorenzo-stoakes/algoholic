@@ -45,3 +45,15 @@ int *gen_array(const int len, const enum array_type type)
 
 	return ret;
 }
+
+bool test_sort(const sort_fn_t sort, const int len, const enum array_type type)
+{
+	bool ret;
+	int *ns = gen_array(len, type);
+
+	ns = sort(ns, len);
+	ret = check_array(ns, len);
+	free(ns);
+
+	return ret;
+}
