@@ -2,7 +2,5 @@
 .#*
 
 # Binaries.
-src/sort/c/isort_test
-src/sort/cc/isort
-src/graph/trie/go/tools/prefix
+sort/c/isort_test
 *.6
