@@ -62,7 +62,7 @@ static void run_test(const sort_fn_t sort)
 
 int main(void)
 {
-	run_test(isort);
+	run_test(algoholic_isort);
 
 	return EXIT_SUCCESS;
 }

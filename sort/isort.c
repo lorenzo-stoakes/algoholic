@@ -54,7 +54,7 @@
  * 3. We can do all of this 'in place' by merely swapping around elements so the
  * algorithm uses constant time memory in all cases.
  */
-int *isort(int ns[], const int len)
+int *algoholic_isort(int ns[], const int len)
 {
 	int i, j, key;
 
