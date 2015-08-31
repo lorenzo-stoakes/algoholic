@@ -4,7 +4,7 @@
 
 #include "test.h"
 
-bool check_array(const int ns[], const size_t len)
+static bool check_array(const int ns[], const size_t len)
 {
 	size_t i;
 	bool ret = true;
@@ -20,7 +20,7 @@ bool check_array(const int ns[], const size_t len)
 	return ret;
 }
 
-int next_val(int index, const size_t len, const enum array_type type)
+static int next_val(int index, const size_t len, const enum array_type type)
 {
 	switch (type) {
 	case ARR_REVERSE_SORTED:
@@ -35,7 +35,7 @@ int next_val(int index, const size_t len, const enum array_type type)
 	exit(EXIT_FAILURE);
 }
 
-int *gen_array(const size_t len, const enum array_type type)
+static int *gen_array(const size_t len, const enum array_type type)
 {
 	size_t i;
 	int *ret = calloc(sizeof(int), len);
