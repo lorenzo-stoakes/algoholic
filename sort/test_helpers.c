@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "test.h"
 
@@ -46,17 +47,30 @@ static int *gen_array(const size_t len, const enum array_type type)
 	return ret;
 }
 
+static bool test_sort_timed(const sort_fn_t sort, const size_t len,
+			const enum array_type type, bool check, time_t *takenp)
+{
+	bool ret = true;
+	clock_t start;
+	int *ns = gen_array(len, type);
+
+	start = clock();
+	ns = sort(ns, len);
+	*takenp = clock() - start;
+
+	if (check)
+		ret = check_array(ns, len);
+
+	free(ns);
+	return ret;
+}
+
 bool test_sort(const sort_fn_t sort, const size_t len,
 	const enum array_type type)
 {
-	bool ret;
-	int *ns = gen_array(len, type);
+	time_t dummy;
 
-	ns = sort(ns, len);
-	ret = check_array(ns, len);
-	free(ns);
-
-	return ret;
+	return test_sort_timed(sort, len, type, true, &dummy);
 }
 
 void test_failure(const char *name, const bool fatal)
