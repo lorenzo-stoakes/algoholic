@@ -58,3 +58,11 @@ bool test_sort(const sort_fn_t sort, const size_t len,
 
 	return ret;
 }
+
+void test_failure(const char *name, const bool fatal)
+{
+	fprintf(stderr, "\t- %s FAILED.\n", name);
+
+	if (fatal)
+		exit(EXIT_FAILURE);
+}
