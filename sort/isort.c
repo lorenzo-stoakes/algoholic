@@ -15,7 +15,7 @@
  *   Average: O(1)
  *      Best: O(1)
  */
-void isort(int ns[], int n)
+int *isort(int ns[], int n)
 {
 	int i, j, key;
 
@@ -79,4 +79,6 @@ void isort(int ns[], int n)
 	 * Once the loop is complete the loop invariant specifies that ns[0, n)
 	 * is sorted, i.e. ns is sorted and the sort has succeeded.
 	 */
+
+	return ns;
 }
