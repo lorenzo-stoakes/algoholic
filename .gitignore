@@ -2,5 +2,5 @@
 .#*
 
 # Binaries.
-sort/c/isort_test
-*.6
+run_test
+*.o

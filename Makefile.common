@@ -1,0 +1,18 @@
+COMMON_FLAGS=-g -pedantic -Wall -Werror -Wextra -Wpacked -Wshadow
+CFLAGS=$(COMMON_FLAGS) -O3
+
+C_FILES=$(wildcard *.c)
+CODE_FILES=$(C_FILES) $(wildcard *.h Makefile)
+
+all: run_test
+
+run_test: $(CODE_FILES)
+	$(CC) $(CFLAGS) $(C_FILES) -o $@
+
+clean:
+	rm -f run_test *.o
+
+test: run_test
+	./run_test
+
+.PHONY: all clean test
